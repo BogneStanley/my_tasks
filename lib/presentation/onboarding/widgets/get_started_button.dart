@@ -37,7 +37,8 @@ class _GetStartedButtonState extends State<GetStartedButton> {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromARGB(255, 20, 54, 138).withOpacity(0.15),
+                    color: const Color.fromARGB(255, 20, 54, 138)
+                        .withOpacity(0.15),
                     blurRadius: 15,
                     offset: const Offset(-4, 8),
                   )
