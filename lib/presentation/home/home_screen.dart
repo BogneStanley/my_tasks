@@ -6,7 +6,9 @@ import 'package:my_tasks/presentation/common/widgets/avatar_card.dart';
 import 'package:my_tasks/presentation/common/widgets/pile_avatar_card.dart';
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:my_tasks/presentation/common/widgets/task_info_card.dart';
+import 'package:my_tasks/presentation/common/widgets/task_item.dart';
 import 'package:my_tasks/presentation/home/widgets/bottom_navbar.dart';
+import 'package:my_tasks/presentation/tasks/tasks_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -88,64 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     20.ph,
-                    Container(
-                      width: size.width,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color.fromARGB(255, 6, 26, 78)
-                                .withOpacity(0.5),
-                            blurRadius: 100,
-                          )
-                        ],
-                        color: const Color.fromARGB(255, 105, 114, 231),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                          vertical: 15,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Mobile App Design",
-                              style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            Text(
-                              "Mike and Anita",
-                              style: GoogleFonts.poppins(
-                                color: const Color.fromARGB(255, 205, 211, 245),
-                                fontSize: 12,
-                              ),
-                            ),
-                            10.ph,
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const PileAvatarCard(avatarsPaths: [
-                                  "assets/images/profile1.jpg",
-                                  "assets/images/profile2.jpg",
-                                ]),
-                                Text(
-                                  "Now",
-                                  style: GoogleFonts.poppins(
-                                    color: const Color.fromARGB(
-                                        255, 205, 211, 245),
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                    TaskItem(),
                     40.ph,
                     Row(
                       children: [
@@ -177,25 +122,52 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     20.ph,
-                    const Expanded(
+                    Expanded(
                       child: Row(children: [
                         Expanded(
                             child: Column(
                           children: [
                             Expanded(
                               flex: 3,
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TaskInfoCard(
-                                    taskQuantity: 22, label: "Done"),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const TasksScreen(
+                                          label: "Done",
+                                        );
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TaskInfoCard(
+                                      taskQuantity: 22, label: "Done"),
+                                ),
                               ),
                             ),
                             Expanded(
                               flex: 2,
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TaskInfoCard(
-                                    taskQuantity: 10, label: "Ongoing"),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const TasksScreen(
+                                            label: "Ongoing");
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TaskInfoCard(
+                                      taskQuantity: 10, label: "Ongoing"),
+                                ),
                               ),
                             ),
                           ],
@@ -205,19 +177,45 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Expanded(
                               flex: 2,
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TaskInfoCard(
-                                    taskQuantity: 7, label: "Inprogress"),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const TasksScreen(
+                                            label: "In Progess");
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TaskInfoCard(
+                                      taskQuantity: 7, label: "In Progess"),
+                                ),
                               ),
                             ),
                             Expanded(
                               flex: 3,
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TaskInfoCard(
-                                    taskQuantity: 12,
-                                    label: "Waiting for review"),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const TasksScreen(
+                                            label: "Waiting for review");
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TaskInfoCard(
+                                      taskQuantity: 12,
+                                      label: "Waiting for review"),
+                                ),
                               ),
                             ),
                           ],

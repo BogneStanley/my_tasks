@@ -9,7 +9,7 @@
                 "--enable-dart-profiling",
                 "--verbose"
             ],
-            "noDebug": false
+            "noDebug": true
         }
     ]
 }

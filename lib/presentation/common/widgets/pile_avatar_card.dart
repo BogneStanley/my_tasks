@@ -16,8 +16,9 @@ class PileAvatarCard extends StatelessWidget {
         ...avatarsPaths.map(
           (avatarPath) => Padding(
             padding: EdgeInsets.only(
-                left: 35 * avatarsPaths.indexOf(avatarPath).toDouble()),
+                left: 28 * avatarsPaths.indexOf(avatarPath).toDouble()),
             child: AvatarCard(
+              size: 40,
               path: avatarPath,
             ),
           ),

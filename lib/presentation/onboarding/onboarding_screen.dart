@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_tasks/core/tools/custom_extention.dart';
+import 'package:my_tasks/presentation/home/home_screen.dart';
 import 'package:my_tasks/presentation/onboarding/widgets/get_started_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -60,7 +61,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       25.ph,
                       GetStartedButton(
                         onTap: () {
-                          print("Ok");
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const HomeScreen();
+                              },
+                            ),
+                          );
                         },
                       ),
                     ],

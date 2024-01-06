@@ -4,14 +4,16 @@ class AvatarCard extends StatelessWidget {
   const AvatarCard({
     super.key,
     required this.path,
+    this.size = 50,
   });
   final String path;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: size,
+      height: size,
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
           color: Colors.white,

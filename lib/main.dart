@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_tasks/presentation/home/home_screen.dart';
 import 'package:my_tasks/presentation/onboarding/onboarding_screen.dart';
+import 'package:my_tasks/presentation/tasks/tasks_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }

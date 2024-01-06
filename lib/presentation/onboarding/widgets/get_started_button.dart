@@ -22,7 +22,7 @@ class _GetStartedButtonState extends State<GetStartedButton> {
         setState(() {
           buttonWidth = MediaQuery.of(context).size.width;
         });
-        await Future.delayed(const Duration(seconds: 1));
+        await Future.delayed(const Duration(milliseconds: 300));
         widget.onTap();
       },
       child: Stack(
@@ -31,7 +31,7 @@ class _GetStartedButtonState extends State<GetStartedButton> {
           SizedBox(
             height: 60,
             child: AnimatedContainer(
-              duration: const Duration(seconds: 1),
+              duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
               width: buttonWidth,
               decoration: BoxDecoration(
