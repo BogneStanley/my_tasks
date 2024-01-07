@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_tasks/core/tools/custom_extention.dart';
 import 'package:my_tasks/presentation/common/widgets/avatar_card.dart';
-import 'package:my_tasks/presentation/common/widgets/pile_avatar_card.dart';
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:my_tasks/presentation/common/widgets/task_info_card.dart';
 import 'package:my_tasks/presentation/common/widgets/task_item.dart';
 import 'package:my_tasks/presentation/home/widgets/bottom_navbar.dart';
 import 'package:my_tasks/presentation/tasks/tasks_screen.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -82,15 +82,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 30,
                         fontWeight: FontWeight.w600,
                       ),
-                    ),
+                    )
+                        .animate()
+                        .fade(duration: 1.seconds)
+                        .slideX(duration: 1.seconds),
                     Text(
                       "6 Tasks are pending",
                       style: GoogleFonts.poppins(
                         color: const Color.fromARGB(255, 205, 211, 245),
                       ),
-                    ),
+                    )
+                        .animate(delay: (700).milliseconds)
+                        .fade(duration: 1.seconds)
+                        .slideX(duration: 1.seconds),
                     20.ph,
-                    const TaskItem(),
+                    const TaskItem()
+                        .animate(delay: (700 * 1.2).milliseconds)
+                        .fade(duration: 1.seconds)
+                        .slideX(duration: 1.seconds),
                     40.ph,
                     Row(
                       children: [
@@ -120,12 +129,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ],
-                    ),
+                    )
+                        .animate(delay: (700 * 1.4).milliseconds)
+                        .fade(duration: 1.seconds)
+                        .slideX(duration: 1.seconds),
                     20.ph,
                     Expanded(
                       child: Row(children: [
                         Expanded(
-                            child: Column(
+                                child: Column(
                           children: [
                             Expanded(
                               flex: 3,
@@ -148,7 +160,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       taskQuantity: 22, label: "Done"),
                                 ),
                               ),
-                            ),
+                            )
+                                .animate(delay: (700 * 1.6).milliseconds)
+                                .fade(duration: 1.seconds)
+                                .slideX(duration: 1.seconds),
                             Expanded(
                               flex: 2,
                               child: GestureDetector(
@@ -171,7 +186,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ],
-                        )),
+                        ))
+                            .animate(delay: (700 * 1.8).milliseconds)
+                            .fade(duration: 1.seconds)
+                            .slideX(duration: 1.seconds),
                         Expanded(
                             child: Column(
                           children: [
@@ -195,7 +213,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       taskQuantity: 7, label: "In Progess"),
                                 ),
                               ),
-                            ),
+                            )
+                                .animate(delay: (700 * 2).milliseconds)
+                                .fade(duration: 1.seconds)
+                                .slideX(duration: 1.seconds),
                             Expanded(
                               flex: 3,
                               child: GestureDetector(
@@ -217,7 +238,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       label: "Waiting for review"),
                                 ),
                               ),
-                            ),
+                            )
+                                .animate(delay: (700 * 2.2).milliseconds)
+                                .fade(duration: 1.seconds)
+                                .slideX(duration: 1.seconds),
                           ],
                         )),
                       ]),

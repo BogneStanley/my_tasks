@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_tasks/core/tools/custom_extention.dart';
 import 'package:my_tasks/data/fake/weekly_day.dart';
@@ -83,7 +84,10 @@ class _TasksScreenState extends State<TasksScreen> {
                         dayNumber: index + 1,
                         label: weeklyDay[index % 6].substring(0, 3),
                         isActive: index == 0,
-                      );
+                      )
+                          .animate(delay: (100 * 1.1 * index).milliseconds)
+                          .fade(duration: 1.seconds)
+                          .slideX(duration: 1.seconds);
                     },
                     scrollDirection: Axis.horizontal,
                     clipBehavior: Clip.none,
@@ -109,9 +113,15 @@ class _TasksScreenState extends State<TasksScreen> {
                               startTime: "${index + 1}.00 AM",
                               endTime: "${index + 2}.00 PM",
                             )
+                              .animate(delay: (100 * 1.1 * index).milliseconds)
+                              .fade(duration: 1.seconds)
+                              .slideX(duration: 1.seconds)
                           : TimeLineTaskDivider(
                               divideTime: "${index + 1} AM",
-                            );
+                            )
+                              .animate(delay: (100 * 1.1 * index).milliseconds)
+                              .fade(duration: 1.seconds)
+                              .slideX(duration: 1.seconds);
                     },
                     itemCount: 10,
                   ),

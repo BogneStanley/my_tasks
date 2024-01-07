@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:my_tasks/presentation/onboarding/onboarding_screen.dart';
-import 'package:my_tasks/presentation/tasks/tasks_screen.dart';
 
 void main() {
+  Animate.restartOnHotReload = true;
   runApp(const MyApp());
 }
 
