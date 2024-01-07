@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     20.ph,
-                    TaskItem(),
+                    const TaskItem(),
                     40.ph,
                     Row(
                       children: [
@@ -142,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                child: Padding(
+                                child: const Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: TaskInfoCard(
                                       taskQuantity: 22, label: "Done"),
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                child: Padding(
+                                child: const Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: TaskInfoCard(
                                       taskQuantity: 10, label: "Ongoing"),
@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                child: Padding(
+                                child: const Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: TaskInfoCard(
                                       taskQuantity: 7, label: "In Progess"),
@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   );
                                 },
-                                child: Padding(
+                                child: const Padding(
                                   padding: EdgeInsets.all(8.0),
                                   child: TaskInfoCard(
                                       taskQuantity: 12,
